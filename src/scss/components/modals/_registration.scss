@@ -1,0 +1,273 @@
+.form {
+  @include flex(initial, initial, column, px-to-rem(12));
+
+  &-step {
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &-group {
+    @include flex(initial, initial, column, px-to-rem(4));
+
+    label {
+      @include fontSettings(px-to-rem(13), px-to-rem(16), 500);
+      color: #2D2A26;
+      cursor: pointer;
+
+      span {
+        @include fontSettings(px-to-rem(10), px-to-rem(16));
+      }
+    }
+
+    input {
+      @include fontSettings(px-to-rem(13));
+      background: #F5F6FA;
+      border: px-to-rem(1) solid #9CA4BF;
+      padding: px-to-rem(11) px-to-rem(16);
+      border-radius: px-to-rem(4);
+      color: #2D2A26;
+      transition: 0.3s;
+      width: 100%;
+
+      &::placeholder {
+        color: #999DAD;
+      }
+
+      &:hover {
+        background: #f5f6fa73;
+      }
+    }
+  }
+
+  &-group-select-list,
+  &-group-input-with-select {
+    @include flex(initial, initial, row, px-to-rem(12));
+  }
+
+  &-group-input-wrapper {
+    @include flex(center, initial);
+    position: relative;
+  }
+
+  &-group-input-button {
+    @include flex(center, center);
+    @include boxSize(px-to-rem(24));
+    background: transparent;
+    border: none;
+    position: absolute;
+    right: px-to-rem(16);
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &-group-description {
+    @include fontSettings(px-to-rem(12), px-to-rem(16));
+    color: #A4A4A4;
+    margin-top: px-to-rem(-2);
+    padding: 0 px-to-rem(16);
+  }
+
+  &-group-validation-info {
+    @include flex(center, initial, row, px-to-rem(4) px-to-rem(8));
+    flex-wrap: wrap;
+  }
+
+  &-group-validation-info-item {
+    @include fontSettings(px-to-rem(11), px-to-rem(16), 500);
+    @include flex(center, initial, row, px-to-rem(4));
+
+    &.success {
+      &:before {
+        @include boxSize(px-to-rem(12));
+        background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 2L4.33333 10L1 5.78947' stroke='%2300CA45' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center;
+        content: '';
+      }
+    }
+
+    &.danger {
+      &:before {
+        @include boxSize(px-to-rem(12));
+        background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 2L2 10' stroke='%23C82C16' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 2L10 10' stroke='%23C82C16' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center;
+        content: '';
+      }
+    }
+
+    &.info {
+      &:before {
+        @include boxSize(px-to-rem(8));
+        background: #9CA4BF;
+        border-radius: 50%;
+        content: '';
+        margin: px-to-rem(2);
+      }
+    }
+  }
+
+  &-description {
+    @include fontSettings(px-to-rem(10), px-to-rem(16), 500);
+    text-align: center;
+    color: #2D2A26;
+
+    a {
+      color: #2D2A26;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-link-wrapper {
+    @include fontSettings(px-to-rem(12), px-to-rem(14), 600);
+    text-align: center;
+    color: #2D2A26;
+
+    a {
+      color: #2D2A26;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-checkbox-wrapper {
+    @include flex(flex-start, space-between, row, px-to-rem(8));
+
+    a {
+      @include fontSettings(px-to-rem(12), px-to-rem(14), 500);
+      text-align: right;
+      text-decoration: underline;
+      color: #2826A5;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  hr {
+    border: none;
+    background: #CBC7C7;
+    height: 0.5px;
+  }
+
+  &-checkbox {
+    @include flex(center);
+    font-size: px-to-rem(11);
+    transition: 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked + label .checkmark {
+        background-color: transparent;
+      }
+
+      &:checked + label .checkmark::after {
+        @include boxSizeConfigured(px-to-rem(12), px-to-rem(6));
+        content: '';
+        position: absolute;
+        left: px-to-rem(5);
+        top: 0;
+        border: solid black;
+        border-width: 0 px-to-rem(1) px-to-rem(1) 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    label {
+      @include flex(flex-start);
+      @include fontSettings(px-to-rem(12), px-to-rem(16));
+      cursor: pointer;
+    }
+
+    .checkmark {
+      @include boxSize(px-to-rem(18));
+      display: inline-block;
+      border: px-to-rem(1) solid #2D2A26;
+      margin-right: px-to-rem(8);
+      border-radius: px-to-rem(2);
+      position: relative;
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+    }
+  }
+}
+
+.phone-input {
+  @include flex(center);
+}
+
+.select-container {
+  cursor: pointer;
+  position: relative;
+  width: px-to-rem(108);
+}
+
+.selected-option {
+  @include flex(center, space-between);
+  @include fontSettings(px-to-rem(13), px-to-rem(24), 500);
+  padding: px-to-rem(11) px-to-rem(7);
+  border: px-to-rem(1) solid #9CA4BF;
+  background-color: #F5F6FA;
+  border-radius: px-to-rem(4);
+  color: #494949;
+  transition: 0.3s;
+
+  &:hover {
+    background: #f5f6fa73;
+  }
+
+  &.active {
+    &:after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:after {
+    @include boxSize(px-to-rem(24));
+    background: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.33331 10L12.3333 15L17.3333 10' stroke='%239CA4BF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center;
+    content: '';
+    transition: 0.3s;
+  }
+}
+
+.options-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: px-to-rem(200);
+  border: px-to-rem(1) solid #ccc;
+  border-radius: px-to-rem(4);
+  background-color: #fff;
+  max-height: px-to-rem(200);
+  overflow-y: auto;
+  display: none;
+  z-index: 1;
+  flex-direction: column;
+}
+
+.option {
+  @include fontSettings(px-to-rem(13), px-to-rem(24), 500);
+  padding: px-to-rem(10);
+  cursor: pointer;
+  color: #494949;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}

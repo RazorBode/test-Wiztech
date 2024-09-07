@@ -1,0 +1,127 @@
+<div id="registerModal" class="modal modal2">
+   <div class="modal-content-wrapper">
+       <div class="modal-header">
+           <img class="modal-logo" src="images/icons/support-logo.svg" alt="support-logo">
+           <div class="modal-stepper">
+               <div class="modal-stepper-item" id="prev-step"></div>
+               <div class="modal-stepper-item"></div>
+           </div>
+           <span class="modal-close" id="closeRegisterModal">
+                 <img class="modal-close-icon" src="images/icons/close-icon.svg" alt="close-icon">
+            </span>
+       </div>
+       <div class="modal-content">
+           <form id="form-step-1" class="form form-step active">
+               <img class="modal-banner" src="images/deposit-banner.svg" alt="deposit-banner">
+               <h2 class="modal-title">Abrir una cuenta</h2>
+               <div class="form-group">
+                   <label for="email">Correo electrónico <span>(Para recibir ofertas exclusivas)</span></label>
+                   <input type="email" id="email" placeholder="Enter your email" required>
+               </div>
+               <div class="form-group">
+                   <label for="password">Contraseña</label>
+                   <div class="form-group-input-wrapper">
+                       <input type="password" id="password" class="password-field" placeholder="Enter your password">
+                       <button class="form-group-input-button password-toggle" type="button">
+                           <img class="form-group-input-button-icon" src="images/icons/eye.svg" alt="eye" style="display: none;">
+                           <img class="form-group-input-button-icon" src="images/icons/eye-closed.svg" alt="eye-closed" style="display: block;">
+                       </button>
+                   </div>
+                   <div class="form-group-validation-info">
+                       <p class="form-group-validation-info-item success">8-30 caracteres</p>
+                       <p class="form-group-validation-info-item danger">Sin espacios</p>
+                       <p class="form-group-validation-info-item info">Un número</p>
+                       <p class="form-group-validation-info-item info">Una letra mayúscula</p>
+                       <p class="form-group-validation-info-item info">Una letra minúscula</p>
+                   </div>
+               </div>
+               <div class="form-group">
+                   <label>Número de teléfono <span>(Se enviara un codigo de activacion)</span></label>
+                   <div class="form-group-input-with-select">
+                       <div id="selected-country" class="select-container">
+                           <div class="selected-option">+52</div>
+                           <div id="country-options" class="options-list">
+                               <div class="option" data-flag="usa" data-value="+1">United States</div>
+                               <div class="option" data-flag="uk" data-value="+44">United Kingdom</div>
+                           </div>
+                       </div>
+                       <input id="phone-number" type="text" placeholder="Enter phone number">
+                   </div>
+               </div>
+               <div class="form-group">
+                   <div class="form-checkbox">
+                       <input type="checkbox" id="checkbox-2" />
+                       <label for="checkbox-2">
+                           <span class="checkmark"></span>
+                           Acepto recibir boletines, información promocional y actualizaciones de productos por correo electrónico o sms
+                       </label>
+                   </div>
+               </div>
+               <button class="button primary-light" type="button" id="next-step">Siguiente</button>
+               <p class="form-link-wrapper">
+                   ¿Ya tiene una cuenta? <a href="/">Acceder</a>
+               </p>
+               <hr>
+               <p class="form-description">
+                   Registrarte o crear tu cuenta significa que estás de acuerdo con
+                   <a href="/">Los términos y condiciones & La política de privacidad</a>.
+               </p>
+           </form>
+           <form id="form-step-2" class="form form-step">
+               <h2 class="modal-title">Abrir una cuenta</h2>
+               <div class="form-group">
+                   <label for="username">Nombre <span>(Como aparece en tu identificacion)</span></label>
+                   <input type="text" id="username" placeholder="Enter your username" required>
+               </div>
+               <div class="form-group">
+                   <label for="address">Apellido <span>(Como aparece en tu identificacion)</span></label>
+                   <input type="text" id="address" placeholder="Enter your address" required>
+                   <div class="form-group-description">Helper Text</div>
+               </div>
+               <div class="form-group">
+                   <label for="address">Fecha de nacimiento</label>
+                   <div class="form-group-select-list">
+                       <div class="custom-select" id="day-trigger">
+                           <div class="custom-select__trigger">
+                               <span class="custom-select__label">Día</span>
+                               <span class="custom-select__arrow"></span>
+                           </div>
+                           <div class="custom-select__options" id="day-options"></div>
+                       </div>
+                       <div class="custom-select" id="month-trigger">
+                           <div class="custom-select__trigger">
+                               <span class="custom-select__label">Mes</span>
+                               <span class="custom-select__arrow"></span>
+                           </div>
+                           <div class="custom-select__options" id="month-options"></div>
+                       </div>
+                       <div class="custom-select" id="year-trigger">
+                           <div class="custom-select__trigger">
+                               <span class="custom-select__label">Year</span>
+                               <span class="custom-select__arrow"></span>
+                           </div>
+                           <div class="custom-select__options" id="year-options"></div>
+                       </div>
+                   </div>
+               </div>
+               <div class="form-group" id="couponToggleContainer">
+                   <div id="couponToggleButton">
+                       ¿Tienes código de <span id="toggleCouponInput" style="text-decoration: underline;">cupón?</span> (opcional)
+                   </div>
+                   <div id="couponInputContainer" style="display: none;">
+                       <input type="text" id="couponCode" placeholder="Ingresa tu código de cupón">
+                   </div>
+               </div>
+               <button class="button primary-light" type="submit">Registrate</button>
+               <p class="form-link-wrapper">
+                   ¿Ya tiene una cuenta? <a href="/">Acceder</a>
+               </p>
+               <hr>
+               <p class="form-description">
+                   Registrarte o crear tu cuenta significa que estás de acuerdo con
+                   <a href="/">Los términos y condiciones & La política de privacidad</a>.
+               </p>
+           </form>
+       </div>
+   </div>
+</div>

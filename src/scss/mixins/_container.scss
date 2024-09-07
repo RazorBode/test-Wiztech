@@ -1,0 +1,32 @@
+@mixin container(
+  $max-width-lg: $container-lg,
+  $max-width-md: $container-md,
+  $max-width-sm: $container-sm,
+  $max-width-xs: $container-xs,
+  $padding-md: $container-padding-md,
+  $padding-sm: $container-padding-sm,
+  $padding-xs: $container-padding-xs) {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 $padding-xs;
+  box-sizing: border-box;
+
+  @media (min-width: $breakpoint-xs) {
+    max-width: $max-width-xs;
+    padding: 0 $padding-xs;
+  }
+
+  @media (min-width: $breakpoint-sm) {
+    max-width: $max-width-sm;
+    padding: 0 $padding-sm;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    max-width: $max-width-md;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    max-width: $max-width-lg;
+  }
+}

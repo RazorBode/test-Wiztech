@@ -1,0 +1,105 @@
+.button {
+  @include flex(center, center);
+  @include fontSettings(px-to-rem(13), px-to-rem(16), 600);
+  background: transparent;
+  border: px-to-rem(1) solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+
+  @media (min-width: 768px) {
+    @include fontSettings(px-to-rem(18), px-to-rem(22), 600);
+    border: px-to-rem(2) solid transparent;
+  }
+
+  &.primary {
+    @include fontSettings(px-to-rem(20), px-to-rem(24));
+    background-color: $success;
+    padding: px-to-rem(9) px-to-rem(50);
+    color: $dark;
+    border-radius: px-to-rem(6);
+    height: px-to-rem(52);
+    min-width: px-to-rem(240);
+
+    @media (min-width: 768px) {
+      @include fontSettings(px-to-rem(18), px-to-rem(22));
+      border-radius: px-to-rem(4);
+      height: px-to-rem(48);
+    }
+
+    @media (min-width: 1024px) {
+      height: px-to-rem(45);
+      min-width: px-to-rem(200);
+    }
+
+    &:hover {
+      background: transparent;
+      border-color: $success;
+      color: $font-light;
+    }
+
+    &:active {
+      background-color: $success;
+      color: $dark;
+    }
+  }
+
+  &.primary-light {
+    @include fontSettings(px-to-rem(16), px-to-rem(20));
+    background: $success-light;
+    border-radius: px-to-rem(4);
+    height: px-to-rem(48);
+    padding: px-to-rem(12) px-to-rem(16);
+
+    &:hover {
+      background: transparent;
+      border-color: $success-light;
+      color: $dark;
+    }
+
+    &:active {
+      background-color: $success-light;
+    }
+  }
+
+  &.outlined {
+    border-color: $success;
+    border-radius: px-to-rem(8);
+    color: $font-light;
+    height: px-to-rem(32);
+    min-width: px-to-rem(100);
+    padding: px-to-rem(7) px-to-rem(14);
+
+    @media (min-width: 768px) {
+      height: px-to-rem(50);
+      padding: px-to-rem(11) px-to-rem(19);
+    }
+
+    &:hover {
+      background: $success;
+      color: $dark;
+    }
+
+    &:active {
+      background: $success;
+    }
+  }
+
+  &.secondary {
+    @include fontSettings(px-to-rem(14), px-to-rem(18));
+    background: $grey;
+    border-radius: px-to-rem(8);
+    color: $font-light;
+    padding: px-to-rem(10) px-to-rem(16);
+
+    &:hover {
+      background: transparent;
+      border-color: $grey;
+      color: $dark;
+    }
+
+    &:active {
+      background: $grey;
+      color: $font-light;
+    }
+  }
+}

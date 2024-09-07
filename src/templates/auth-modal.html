@@ -1,0 +1,48 @@
+<div id="authModal" class="modal">
+    <div class="modal-content-wrapper">
+        <div class="modal-header">
+            <img class="modal-logo" src="images/icons/support-logo.svg" alt="support-logo">
+            <span class="modal-close" id="closeAuthModal">
+                 <img class="modal-close-icon" src="images/icons/close-icon.svg" alt="close-icon">
+            </span>
+        </div>
+        <div class="modal-content">
+            <h2 class="modal-title">ACCEDER</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label for="login">Usuario o Correo Electrónico </label>
+                    <input type="text" id="login" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="auth-password">Contraseña</label>
+                    <div class="form-group-input-wrapper">
+                        <input type="password" id="auth-password" class="password-field" placeholder="Enter your password">
+                        <button class="form-group-input-button password-toggle" type="button">
+                            <img class="form-group-input-button-icon" src="images/icons/eye.svg" alt="eye" style="display: none;">
+                            <img class="form-group-input-button-icon" src="images/icons/eye-closed.svg" alt="eye-closed" style="display: block;">
+                        </button>
+                    </div>
+                </div>
+                <div class="form-checkbox-wrapper">
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <label for="checkbox">
+                            <span class="checkmark"></span>
+                            Recuérdame
+                        </label>
+                    </div>
+                    <a href="/">¿Has olvidado tu contraseña?</a>
+                </div>
+                <button class="button secondary" type="submit">Acceder</button>
+                <p class="form-link-wrapper">
+                    Nuevo en Winpot? <a href="/">Crear cuenta</a>
+                </p>
+                <hr>
+                <p class="form-description">
+                    Registrarte o crear tu cuenta significa que estás de acuerdo con
+                    <a href="/">Los términos y condiciones & La política de privacidad</a>.
+                </p>
+            </form>
+        </div>
+    </div>
+</div>

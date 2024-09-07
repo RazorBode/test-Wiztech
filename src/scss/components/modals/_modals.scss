@@ -1,0 +1,138 @@
+.modal {
+  display: none;
+  padding: px-to-rem(16);
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  backdrop-filter: blur(4px);
+
+  &-content-wrapper {
+    background-color: #fefefe;
+    border-radius: px-to-rem(4);
+    padding: px-to-rem(16);
+    margin: auto;
+    max-width: px-to-rem(414);
+  }
+
+  &-header {
+    @include flex(center, space-between, row, px-to-rem(16));
+    margin-bottom: px-to-rem(8);
+  }
+
+  &-logo {
+    @include boxSize(px-to-rem(18));
+  }
+
+  &-content {
+    @include flex(initial, initial, column, px-to-rem(12));
+  }
+
+  &-close {
+    @include flex(center, center);
+    @include boxSize(px-to-rem(18));
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+
+  &-title {
+    @include fontSettings(px-to-rem(18), 120%, 700);
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    color: #2D2A26;
+    text-align: center;
+  }
+
+  &-stepper {
+    @include flex(center, space-between);
+    position: relative;
+    width: px-to-rem(100);
+  }
+
+  &-stepper-item {
+    @include flex(center, center);
+    background: #ffffff;
+    border: px-to-rem(1) solid #9E9E9E;
+    border-radius: 50%;
+    height: px-to-rem(18);
+    transition: 0.3s;
+    width: px-to-rem(18);
+    z-index: 1;
+
+    &:before {
+      background: #9E9E9E;
+      border-radius: 50%;
+      content: '';
+      display: flex;
+      height: px-to-rem(6);
+      width: px-to-rem(6);
+    }
+
+    &:not(:last-child) {
+      &:after {
+        background: #9E9E9E;
+        content: '';
+        height: px-to-rem(1);
+        left: px-to-rem(18);
+        position: absolute;
+        right: px-to-rem(18);
+      }
+    }
+
+    &:first-child {
+      border-color: #2D2A26;
+
+      &:before {
+        background: #2D2A26;
+      }
+    }
+
+    &.active {
+      background: #12845B;
+      border-color: #12845B;
+      cursor: pointer;
+
+      &:before {
+        @include boxSizeConfigured(px-to-rem(8), px-to-rem(4));
+        background: transparent;
+        border-radius: 0;
+        content: "";
+        position: absolute;
+        top: px-to-rem(4);
+        border: solid #ffffff;
+        border-width: 0 0.0625rem 0.0625rem 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        background: #2D2A26;
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      & + .modal-stepper-item {
+        border-color: #2D2A26;
+
+        &:before {
+          background: #2D2A26;
+        }
+      }
+    }
+  }
+
+  &-banner {
+    height: px-to-rem(130);
+    width: 100%;
+  }
+}

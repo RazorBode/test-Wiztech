@@ -1,0 +1,32 @@
+.header {
+  @include flex(center, space-between, row, px-to-rem(16));
+  max-width: px-to-rem(1218);
+  position: absolute;
+  top: px-to-rem(24);
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 px-to-rem(12);
+
+  @media (min-width: 768px) {
+    padding: 0 px-to-rem(24);
+    top: px-to-rem(40);
+  }
+
+  &-buttons {
+    @include flex(initial, flex-end, row, px-to-rem(8));
+    flex-wrap: wrap;
+
+    @media (min-width: 768px) {
+      grid-gap: px-to-rem(16);
+    }
+  }
+
+  &-logo {
+    @include boxSizeConfigured(px-to-rem(46), px-to-rem(108));
+
+    @media (min-width: 768px) {
+      @include boxSizeConfigured(px-to-rem(76), px-to-rem(180));
+    }
+  }
+}

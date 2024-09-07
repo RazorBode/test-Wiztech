@@ -1,0 +1,68 @@
+.hero {
+  @include flex(flex-end);
+  background: url("images/hero-banner-mobile.webp") no-repeat center;
+  background-size: cover;
+  min-height: px-to-rem(636);
+  padding-bottom: px-to-rem(48);
+
+  @media (min-width: 768px) {
+    background: url("images/hero-banner-tablet.webp") no-repeat center;
+    background-size: cover;
+    min-height: px-to-rem(893);
+    padding: 0 px-to-rem(40) px-to-rem(64);
+  }
+
+  @media (min-width: 1024px) {
+    background: url("images/hero-banner.webp") no-repeat center;
+    background-size: cover;
+    padding: px-to-rem(196) 0 px-to-rem(141);
+    min-height: px-to-rem(630);
+  }
+
+  &-container {
+    @include flex(center, initial, column, px-to-rem(16));
+    margin: 0 auto;
+    max-width: px-to-rem(1218);
+    text-align: center;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      grid-gap: px-to-rem(32);
+    }
+
+    @media (min-width: 1024px) {
+      align-items: flex-start;
+      grid-gap: px-to-rem(40);
+      padding: 0 px-to-rem(24);
+      text-align: initial;
+    }
+  }
+
+  &-title {
+    @include fontSettings(px-to-rem(26), px-to-rem(36), 800);
+    font-style: italic;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    max-width: px-to-rem(570);
+
+    @media (min-width: 768px) {
+      @include fontSettings(px-to-rem(42), px-to-rem(58), 800);
+    }
+
+    @media (min-width: 1024px) {
+      @include fontSettings(px-to-rem(44), px-to-rem(52), 800);
+      font-style: initial;
+      letter-spacing: 0.05em;
+    }
+
+    span {
+      font-style: initial;
+      font-weight: 600;
+
+      @media (min-width: 1024px) {
+        font-weight: inherit;
+      }
+    }
+  }
+}

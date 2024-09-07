@@ -1,0 +1,63 @@
+.custom-select {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &__trigger {
+    @include flex(center, space-between);
+    padding: px-to-rem(10);
+    border: px-to-rem(1) solid #9CA4BF;
+    border-radius: px-to-rem(4);
+    background-color: #F5F6FA;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #f5f6fa73;
+    }
+  }
+
+  &__label {
+    @include fontSettings(px-to-rem(13), px-to-rem(24), 500);
+    color: #999DAD;
+  }
+
+  &__options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: px-to-rem(1) solid #ccc;
+    border-radius: px-to-rem(4);
+    background-color: #fff;
+    max-height: px-to-rem(200);
+    overflow: auto;
+    z-index: 1;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  &__option {
+    padding: px-to-rem(10);
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  &__arrow {
+    @include boxSize(px-to-rem(24));
+    background: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.33331 10L12.3333 15L17.3333 10' stroke='%239CA4BF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") no-repeat center;
+    background-size: contain;
+    transition: transform 0.3s;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
+  }
+}
